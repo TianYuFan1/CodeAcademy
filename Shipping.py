@@ -45,8 +45,18 @@ def get_cheapest(weight):
 
 
 weight_user = input("Enter the weight of your package. ")
-weight_convert = float(weight_user)
+
+while True:
+    try:
+        weight_convert = float(weight_user)
+    except ValueError:
+        print("Please enter a valid value")
+        weight_user = input("Enter the weight of your package. ")
+    else:
+        break
+
 print("Ground Shipping Cost: ", ground_shipping(weight_convert))
 print("Premium Shipping Cost: ", premium_shipping())
 print("Drone Shipping Cost: ", drone_shipping(weight_convert))
 print(get_cheapest(weight_convert))
+print(isinstance(weight_user, float))
