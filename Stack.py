@@ -9,6 +9,9 @@ class Stack:
         self.limit = limit
         self.size = 0
 
+    def __repr__(self):
+        return "The name of the stack is {NAME}".format(NAME=self.name)
+
     def has_space(self):
         return self.limit > self.size
 
