@@ -11,7 +11,6 @@ class Vertex:
     def get_edges(self):
         return self.edges.keys()
 
-    def add_edge(self, vertex):
-        print("Adding edge {VERTEX} to {VERTEX1}".format(VERTEX=vertex.get_value(),VERTEX1=self.get_value()))
-        self.edges[vertex.get_value()] = True
+    def add_edge(self, vertex, weight = 0):
+        self.edges[vertex] = weight
 
